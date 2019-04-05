@@ -2,25 +2,49 @@ body {
     margin: 0;
 }
 
+#fondo {
+
+}
+
 #titulo {
-    padding-top: 20px;
-    background-color: aqua;
-}
-
-#salesianos,#titulo2 {
-    display: inline-block;
-}
-
-#titulo2 {
+    background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
+    top: 45%;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+#salesianos {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
 }
 
 #portada {
     position: absolute;
-    background-color: yellowgreen;
+    background-image: url("../img/servidores.jpg");
+    background-repeat: no-repeat;
+    background-size: cover ;
     width: 100%;
-    top: 50px;
+    top: 0;
     height: 100%;
+}
+
+#retorno {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    background-color: rgba(128, 128, 128, 0.9);
+    color: white;
+    width: 100%;
+    height: 50px;
+    margin: 0;
 }
 
 #general {
@@ -31,20 +55,4 @@ body {
     height: 100%;
 }
 
-#menu {
-    position: fixed;
-    top: 0;
-    background-color: gray;
-    color: white;
-    width: 100%;
-    height: 50px;
-    margin: 0;
 
-}
-
-#retorno {
-    background-color: yellow;
-    position: fixed;
-    bottom: 50px;
-    right: 50px;
-}
