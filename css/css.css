@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+}
+
+#titulo {
+    padding-top: 20px;
+    background-color: aqua;
+}
+
+#salesianos,#titulo2 {
+    display: inline-block;
+}
+
+#titulo2 {
+    position: absolute;
+}
+
+#portada {
+    position: absolute;
+    background-color: yellowgreen;
+    width: 100%;
+    top: 50px;
+    height: 100%;
+}
+
+#general {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    background-color: gray;
+    color: white;
+    width: 100%;
+    height: 50px;
+    margin: 0;
+
+}
+
+#retorno {
+    background-color: yellow;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
