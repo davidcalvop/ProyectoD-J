@@ -1,9 +1,6 @@
+
 body {
     margin: 0;
-}
-
-#fondo {
-
 }
 
 #titulo {
@@ -55,4 +52,49 @@ body {
     height: 100%;
 }
 
+#img {
+    position: fixed;
+    top: 4px;
+    left: 4px;
+    width: 40px;
+    height: 40px;
+}
 
+#lista {
+ display: none;
+}
+
+#img:hover #lista{
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 100%;
+   max-width: 300px;
+   width: 30%;
+   background-color: black;
+   display: block;
+}
+
+#todo {
+    border-top: 2px solid black;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background-image: url("../img/fondo2.jpg");
+    background-size: cover;
+    background-position: right ;
+    padding-top: 50px;
+}
+
+#texto {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 80%;
+    margin: auto;
+    max-width: 1000px;
+    text-align: justify;
+    padding-top: 10px;
+}
+
+.ejercicios {
+    margin: 0 30px;
+}
