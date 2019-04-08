@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/css.css">
 </head>
 <body>
+
 <header id="inicio">
     <div id="portada">
         <div id="titulo">
@@ -19,68 +20,226 @@
     <div id="todo">
         <div id="texto">
             <div class="ejercicios">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit. Cum dolor est impedit laboriosam molestias
-                    nostrum perferendis quisquam rem saepe tenetur.
-                    Aliquam debitis delectus deleniti, doloremque
-                    dolores magni necessitatibus nulla rerum.
-                </p>
-            </div>
-            <div class="ejercicios">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit. Cum dolor est impedit laboriosam molestias
-                    nostrum perferendis quisquam rem saepe tenetur.
-                    Aliquam debitis delectus deleniti, doloremque
-                    dolores magni necessitatibus nulla rerum.
-                </p>
-            </div>
-            <div class="ejercicios">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit. Cum dolor est impedit laboriosam molestias
-                    nostrum perferendis quisquam rem saepe tenetur.
-                    Aliquam debitis delectus deleniti, doloremque
-                    dolores magni necessitatibus nulla rerum.
-                </p>
-            </div>
-            <div class="ejercicios">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit. Cum dolor est impedit laboriosam molestias
-                    nostrum perferendis quisquam rem saepe tenetur.
-                    Aliquam debitis delectus deleniti, doloremque
-                    dolores magni necessitatibus nulla rerum.
-                </p>
-            </div>
-            <div class="ejercicios">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit. Cum dolor est impedit laboriosam molestias
-                    nostrum perferendis quisquam rem saepe tenetur.
-                    Aliquam debitis delectus deleniti, doloremque
-                    dolores magni necessitatibus nulla rerum.
-                </p>
-            </div>
-            <div class="ejercicios">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit. Cum dolor est impedit laboriosam molestias
-                    nostrum perferendis quisquam rem saepe tenetur.
-                    Aliquam debitis delectus deleniti, doloremque
-                    dolores magni necessitatibus nulla rerum.
-                </p>
+                <h1 id="e1">1.- INSTALACIÓN Y PREPARACIÓN DE MÁQUINA RASPBERRY PI CON RASPBIAN</h1>
+                <p>Lo primero que hemos hecho ha sido conectar al router Asus un host y la Raspberry a través de la
+                    interfaz gráfica del router. Hemos buscado los clientes conectados y así hemos averiguado la IP de
+                    la Raspberry.</p>
+                <figure>
+                    <img src="img/memoria/interfac%20grafica%20router%20asus.PNG"
+                     alt="interfaz grafica del router asus">
+                </figure>
+                <p>A través de un terminal, hemos conectado con la Raspberry a través de SSH con los
+                    datopss por defecto que son:</p>
+                <pre>                    Usuario: pi
+                    Contraseña: raspberry
+                    <code>“ssh pi@192.168.1.197”</code>
+                </pre>
+                <figure>
+                    <img src="img/memoria/terminal%20conectando%20a%20raspberry.PNG" alt="conexion a traves del cmd">
+                </figure>
+                <p>Ahora hemos accecido al fichero de configuración de las interfaces de las Raspberry
+                    (/etc/network/interfaces) y la hemos configurado de forma estática</p>
+                <figure>
+                    <img src="img/memoria/configuracion%20ip.PNG" alt="configuracion de la ip estatica">
+                </figure>
+                <p>Hemos desconectado y vuelto a conectar la raspberry para actualizar la interfaz.
+                    Una vez actualizada, hemos conectado la Raspberry directamente a la red del colegio.</p>
+                <figure>
+                    <img src="img/memoria/configuracion%20host.PNG" alt="configuracion del host"><br><br>
+                </figure>
+                <figure>
+                    <img src="img/memoria/nueva%20conexion%20a%20la%20raspberry.PNG"
+                         alt="nueva conexion a la raspberry">
+                </figure>
+                <p>Ahora vamos a cambiar la contraseña de acceso a la raspberry para evitar que otras personas
+                    puedan conectarse. Con el comando sudo raspi-config accedemos al software de configuración
+                    de herramientas de la Raspberry.</p>
+                <figure>
+                    <img src="img/memoria/cambio%20contraseña.PNG" alt="cambio de contraseña">
+                </figure>
+                <p>Elegimos la primera opción y ya podremos cambiar la contraseña</p>
+                <figure>
+                    <img src="img/memoria/nueva%20contraseña.PNG" alt="nueva contraseña">
+                </figure>
+                <p>A continuación, vamos a crear 2 nuevos usuarios, con el comando <code>“adduser”</code>.</p>
+                <figure>
+                    <img src="img/memoria/primer%20usuario%20david.PNG" alt="creacion del primer usuario"><br><br>
+                </figure>
+                <figure>
+                    <img src="img/memoria/segundo%20usuario%20jaime.PNG" alt="creacion del segundo usuario">
+                </figure>
+                <p>Una vez creados, hemos añadido el usuario “david” al grupo de administradores con el comando
+                    <code>“user mod -g adm david”</code> el grupo adm es el numero 4</p>
+                <figure>
+                    <img src="img/memoria/david%20admin.PNG" alt="metemos a david como administrador"><br><br>
+                </figure>
+                <figure>
+                    <img src="img/memoria/comprobacion%20david%20admin.PNG"
+                         alt="comprobamos que esta como administrador">
+                </figure>
+                <p>Añadimos al usuario David en el /etc/group</p>
+                <figure>
+                    <img src="img/memoria/añadimos%20a%20david%20en%20el%20etc-group.PNG"
+                         alt="añadimos a david al grupo 4">
+                </figure>
+
+                <h1 id="e2">2.- INSTALACIÓN DEL SERVIDOR APACHE</h1>
+                <p>Primero actualizaremos la lista de paquetes disponibles y sus versiones con el comando:</p>
+                <code>sudo apt-get update </code>
+                <p>Ahora, vamos a instalar el servidor web Apache. Lo haremos con el comando:</p>
+                <code>sudo apt-get install apache2 </code><br>
+                <figure>
+                    <img src="img/memoria/instalar%20apache.PNG" alt="instalacion del servidor apache2">
+                </figure>
+                <p>Una vez instalado, introducimos la IP de la Raspberry 192.168.41.204 en el navegador y obtenemos
+                    la página por defecto del servidor web Apache2.</p>
+                <figure>
+                    <img src="img/memoria/apache%20default.PNG" alt="pagina de apache por defecto">
+                </figure>
+                <p>Esta página se encuentra en /var/www/html/index.html</p>
+                <p>Ahora vamos a hacer que funcione PHP.</p>
+                <p>Instalamos los paquetes de  PHP 7.0</p>
+                <figure>
+                    <img src="img/memoria/instalar%20php.PNG" alt="instalación del php">
+                </figure>
+                <p>Con el comando <code>“sudo nano /var/www/html/info.php”</code> vamos a acceder a la configuración
+                    de la página web en PHP.</p>
+                <figure>
+                    <img src="img/memoria/comando%20configuracion%20pagina%20php.PNG"
+                         alt="configuracion de la pagina php">
+                </figure>
+                <p>Una vez dentro del fichero, introducimos un código sencillo para comprobar que en la página
+                    funciona correctamente PHP. La página mostrará los parámetros de PHP.</p>
+                <figure>
+                    <img src="img/memoria/codigo%20sencillo%20php.PNG" alt="codigo">
+                </figure>
+
+                <h1 id="e3">3.- CREACIÓN DE LA PÁGINA WEB-MEMORIA DEL PROYECTO</h1>
+                <p>Lo primero que tenemos que hacer es crear un repositorio nuevo con el nombre que queramos</p>
+                <figure>
+                    <img src="img/memoria/nuevo%20repositorio.PNG" alt="creacion de nuevo repositorio"><br><br>
+                </figure>
+                <figure>
+                    <img src="img/memoria/creacion%20de%20repositorio.PNG" alt="creacion del repositorio">
+                </figure>
+                <p>Necesitamos que el otro integrante del grupo tambien tenga acceso a nuestro repositorio y pueda
+                hacer commit y push</p>
+                <figure>
+                    <img src="img/memoria/añadir%20colaborador.PNG" alt="añadimos a nuestro colaboradores">
+                </figure>
+                <p>A el le llegara una invitacion y una vez aceptada se le metera dentro de nuestro repositorio y 
+                ya tendra permisos</p>
+                <figure>
+                    <img src="img/memoria/acceso%20invitacion%20jaime%20git%20hub.png"
+                         alt="comprobar acceso al repositorio">
+                </figure>
+                <p>Ahora creamos una carpeta nueva donde vamos a trabajar, la inicializamos y la conectamos con el
+                repositorio para poder hacer los commit y subir los archivos editados, para ello usamos los
+                comandos <code>"git init" y "git remote add origin ejemplorepositorio"</code></p>
+                <figure>
+                    <img src="img/memoria/carpeta%20proyecto.PNG" alt="">
+                </figure>
+                <p>A partir de aqui ya podemos abrir el WebStorm y empezar a crear nuestra pagina web, al acabar
+                podemos subir el trabajo realizado a traves de los comandos <code>"git add *"</code> que añade
+                los archivos nuevos creados; <code>"git commit -m 'nombre' "</code> se guarda con el nombre indicado
+                y por ultimo <code>"git push -u origin master"</code> para subir los archivos al repositorio</p>
+                <p>Si todo ha ido correctamente tendremos archivos en nuestro repositorio</p>
+                <figure>
+                    <img src="img/memoria/git%20push.PNG" alt="comprobacion de git push">
+                </figure>
+                <p>Desde el ordenador de nuestro compañero podemos hacer un <code>"git clone 'repositorio' "</code>
+                y se nos descargaran todos los archivos para que el pueda trabajar con la version mas reciente</p>
+
+                <h1 id="e4">4.- INSTALACIÓN DEL SERVIDOR MYSQL</h1>
+                <p>A continuación, vamos a instalar MYSQL Server con el comando
+                    <code>“sudo apt-get install mysql-server”</code></p>
+                <figure>
+                    <img src="img/memoria/instalacion%20mysql.PNG" alt="instalacion del servidor MYSQL">
+                </figure>
+                <p>Accedemos a la base de datos con el comando <code>“mysql”</code> y comprobamos las tablas
+                    existentes con el comando <code>“show databases;”</code> y observamos que no existe ninguna
+                    base de datos por defecto.</p>
+                <figure>
+                    <img src="img/memoria/comprobar%20tablas.PNG" alt="comprobacion de tablas por defecto">
+                </figure>
+                <p>Instalamos el cliente de MYSQL con el comando <code>"apt-get install mysql-client"</code></p>
+                <figure>
+                    <img src="img/memoria/instalar%20cliente%20mysql.PNG" alt="instalar cliente mysql">
+                </figure>
+                <p>Conectamos php con mysql instalando el paquete php-mysql</p>
+                <figure>
+                    <img src="img/memoria/conectar%20php%20con%20mysql.PNG" alt="conectamos php con mysql">
+                </figure>
+                <p>Ahora instalamos el PHPMYADMIN con el comando <code>"apt-get install phpmyadmin"</code>
+                que es un gestor gráfico de base de datos</p>
+                <figure>
+                    <img src="img/memoria/instalacion%20phpmyadmin.PNG" alt="instalamos el gestor grafico">
+                </figure>
+                <p>Seleccionamos que el servidor que queremos usar sea el apache2, para ello usamos el espacio</p>
+                <figure>
+                    <img src="img/memoria/instalar%20apache%20en%20phpmyadmin.PNG" alt="">
+                </figure>
+                <p>Accedemos a la base de datos como "root" seleccionamos la base de datos MYSQL y cambiamos la
+                    contraseña del usuario "root" para que no se puede acceder a la base de datos con los datos
+                    por defecto</p>
+                <figure>
+                    <img src="img/memoria/cambio%20de%20contraseña%20mysql.PNG" alt="cambio de contraseña del root">
+                </figure>
+                <p>Comprobamos que podemos acceder al phpmyadmin con los nuevos datos</p>
+                <figure>
+                    <img src="img/memoria/phpmyadmin.PNG" alt="conexion a traves del phpmyadmin"><br><br>
+                </figure>
+                <figure>
+                    <img src="img/memoria/acceso%20correcto%20phpmyadmin.PNG" alt="accedemos correctamente al phpmyadmin">
+                </figure>
+
+                <h1 id="e5">5.- ESTIMACIÓN DE COSTES</h1>
+
+
             </div>
         </div>
+        <cite><strong>Autores: David Calvo Pérez y Jaime Santodomingo Fernández</strong></cite>
     </div>
 </main>
 
-<a href="#inicio"><div id="retorno"><img src="img/arriba.png" alt="subir arriba" width="50" height="50"></div></a>
+    <a href="#inicio"><div id="retorno"><img src="img/arriba.png" alt="subir arriba" width="50" height="50"></div></a>
 
-<div id="menu">
-    <div id="img"><img src="img/menu.png" alt="3 rayas para el menu" height="40px" width="40px">
-        <div id="lista">
+<nav>
+    <div id="menu">
+        <div id="img"><img src="img/menu.png" alt="3 rayas para el menu" height="40px" width="40px"></div>
+        <div id="lista" class="lista">
             <ol>
-                <li>dada</li>
-                <li>adawda</li>
+                <h1>Menu</h1>
+                <hr>
+                <br>
+                <li><a href="#e1">- INSTALACION Y PREPARACION DE MAQUINA RASPBERRY PI CON RASPBIAN</a></li>
+                <br>
+                <li><a href="#e2">- INSTALACION DEL SERVIDOR APACHE</a></li>
+                <br>
+                <li><a href="#e3">- CREACION DE LA PAGINA WEB-MEMORIA DEL PROYECTO</a></li>
+                <br>
+                <li><a href="#e4">- INSTALACION DEL SERVIDOR MYSQL</a></li>
+                <br>
+                <li><a href="#e5">- ESTIMACIÓN DE COSTES</a></li>
+                <br>
             </ol>
         </div>
+
     </div>
-</div>
+</nav>
+
+
+// Codigo JvaScript
+
+<script src="jquery-3.3.1.min.js"></script>
+
+<script>
+    $(function () {
+        $("#img").on("click",function () {
+            $('#lista').toggleClass('clase');
+        })
+    })
+</script>
+
 </body>
 </html>
