@@ -1,4 +1,10 @@
 
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+* {
+    font-family: nunito,sans-serif;
+}
+
 body {
     margin: 0;
 }
@@ -82,7 +88,7 @@ body {
     width: 100%;
     background-image: url("../img/fondo2.jpg");
     background-size: cover;
-    background-position: right ;
+    background-position: bottom right ;
     padding-top: 50px;
 }
 
