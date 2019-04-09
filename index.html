@@ -27,6 +27,7 @@
                 <figure>
                     <img src="img/memoria/interfac%20grafica%20router%20asus.PNG"
                      alt="interfaz grafica del router asus">
+                    <figcaption>Img1.- Interfaz grafica del router asus</figcaption>
                 </figure>
                 <p>A través de un terminal, hemos conectado con la Raspberry a través de SSH con los
                     datopss por defecto que son:</p>
@@ -36,51 +37,62 @@
                 </pre>
                 <figure>
                     <img src="img/memoria/terminal%20conectando%20a%20raspberry.PNG" alt="conexion a traves del cmd">
+                    <figcaption>Img2.- Conexion a traves del cmd</figcaption>
                 </figure>
                 <p>Ahora hemos accecido al fichero de configuración de las interfaces de las Raspberry
                     (/etc/network/interfaces) y la hemos configurado de forma estática</p>
                 <figure>
                     <img src="img/memoria/configuracion%20ip.PNG" alt="configuracion de la ip estatica">
+                    <figcaption>Img3.- Configuracion de la ip estatica</figcaption>
                 </figure>
                 <p>Hemos desconectado y vuelto a conectar la raspberry para actualizar la interfaz.
                     Una vez actualizada, hemos conectado la Raspberry directamente a la red del colegio.</p>
                 <figure>
-                    <img src="img/memoria/configuracion%20host.PNG" alt="configuracion del host"><br><br>
+                    <img src="img/memoria/configuracion%20host.PNG" alt="configuracion del host">
+                    <figcaption>Img4.- Configuracion del host</figcaption><br>
                 </figure>
                 <figure>
                     <img src="img/memoria/nueva%20conexion%20a%20la%20raspberry.PNG"
                          alt="nueva conexion a la raspberry">
+                    <figcaption>Img5.- Nueva conexion a la raspberry</figcaption>
                 </figure>
                 <p>Ahora vamos a cambiar la contraseña de acceso a la raspberry para evitar que otras personas
                     puedan conectarse. Con el comando sudo raspi-config accedemos al software de configuración
                     de herramientas de la Raspberry.</p>
                 <figure>
                     <img src="img/memoria/cambio%20contraseña.PNG" alt="cambio de contraseña">
+                    <figcaption>Img6.- Cambio de contraseña</figcaption>
                 </figure>
                 <p>Elegimos la primera opción y ya podremos cambiar la contraseña</p>
                 <figure>
                     <img src="img/memoria/nueva%20contraseña.PNG" alt="nueva contraseña">
+                    <figcaption>Img7.- Nueva contraseña</figcaption>
                 </figure>
                 <p>A continuación, vamos a crear 2 nuevos usuarios, con el comando <code>“adduser”</code>.</p>
                 <figure>
-                    <img src="img/memoria/primer%20usuario%20david.PNG" alt="creacion del primer usuario"><br><br>
+                    <img src="img/memoria/primer%20usuario%20david.PNG" alt="creacion del primer usuario">
+                    <figcaption>Img8.- Creacion del primer usuario</figcaption><br>
                 </figure>
                 <figure>
                     <img src="img/memoria/segundo%20usuario%20jaime.PNG" alt="creacion del segundo usuario">
+                    <figcaption>Img9.- Creacion del segundo usuario</figcaption>
                 </figure>
                 <p>Una vez creados, hemos añadido el usuario “david” al grupo de administradores con el comando
                     <code>“user mod -g adm david”</code> el grupo adm es el numero 4</p>
                 <figure>
-                    <img src="img/memoria/david%20admin.PNG" alt="metemos a david como administrador"><br><br>
+                    <img src="img/memoria/david%20admin.PNG" alt="metemos a david como administrador">
+                    <figcaption>Img10.- Metemos a david como administrador</figcaption><br>
                 </figure>
                 <figure>
                     <img src="img/memoria/comprobacion%20david%20admin.PNG"
                          alt="comprobamos que esta como administrador">
+                    <figcaption>Img11.- Comprobamos que esta como administrador</figcaption><br>
                 </figure>
                 <p>Añadimos al usuario David en el /etc/group</p>
                 <figure>
                     <img src="img/memoria/añadimos%20a%20david%20en%20el%20etc-group.PNG"
                          alt="añadimos a david al grupo 4">
+                    <figcaption>Img12.- Añadimos a david al grupo 4</figcaption><br>
                 </figure>
 
                 <h1 id="e2">2.- INSTALACIÓN DEL SERVIDOR APACHE</h1>
@@ -90,28 +102,33 @@
                 <code>sudo apt-get install apache2 </code><br>
                 <figure>
                     <img src="img/memoria/instalar%20apache.PNG" alt="instalacion del servidor apache2">
+                    <figcaption>Img13.- Instalacion del servidor apache2</figcaption><br>
                 </figure>
                 <p>Una vez instalado, introducimos la IP de la Raspberry 192.168.41.204 en el navegador y obtenemos
                     la página por defecto del servidor web Apache2.</p>
                 <figure>
                     <img src="img/memoria/apache%20default.PNG" alt="pagina de apache por defecto">
+                    <figcaption>Img14.- Pagina de apache por defecto</figcaption><br>
                 </figure>
                 <p>Esta página se encuentra en /var/www/html/index.html</p>
                 <p>Ahora vamos a hacer que funcione PHP.</p>
                 <p>Instalamos los paquetes de  PHP 7.0</p>
                 <figure>
                     <img src="img/memoria/instalar%20php.PNG" alt="instalación del php">
+                    <figcaption>Img15.- Instalación del php</figcaption><br>
                 </figure>
                 <p>Con el comando <code>“sudo nano /var/www/html/info.php”</code> vamos a acceder a la configuración
                     de la página web en PHP.</p>
                 <figure>
                     <img src="img/memoria/comando%20configuracion%20pagina%20php.PNG"
                          alt="configuracion de la pagina php">
+                    <figcaption>Img16.- Configuracion de la pagina php</figcaption><br>
                 </figure>
                 <p>Una vez dentro del fichero, introducimos un código sencillo para comprobar que en la página
                     funciona correctamente PHP. La página mostrará los parámetros de PHP.</p>
                 <figure>
                     <img src="img/memoria/codigo%20sencillo%20php.PNG" alt="codigo">
+                    <figcaption>Img17.- Codigo php</figcaption><br>
                 </figure>
 
                 <h1 id="e3">3.- CREACIÓN DE LA PÁGINA WEB-MEMORIA DEL PROYECTO</h1>
@@ -119,27 +136,32 @@
                 <p>Enlace a nuestro repositorio: <a href="https://github.com/davidcalvop/ProyectoD-J">
                     ProyectoD-J</a></p>
                 <figure>
-                    <img src="img/memoria/nuevo%20repositorio.PNG" alt="creacion de nuevo repositorio"><br><br>
+                    <img src="img/memoria/nuevo%20repositorio.PNG" alt="creacion de nuevo repositorio">
+                    <figcaption>Img18.- Creacion de nuevo repositorio</figcaption><br>
                 </figure>
                 <figure>
                     <img src="img/memoria/creacion%20de%20repositorio.PNG" alt="creacion del repositorio">
+                    <figcaption>Img19.- Creacion del repositorio</figcaption>
                 </figure>
                 <p>Necesitamos que el otro integrante del grupo tambien tenga acceso a nuestro repositorio y pueda
                 hacer commit y push</p>
                 <figure>
                     <img src="img/memoria/añadir%20colaborador.PNG" alt="añadimos a nuestro colaboradores">
+                    <figcaption>Img20.- Añadimos a nuestro colaboradores</figcaption>
                 </figure>
                 <p>A el le llegara una invitacion y una vez aceptada se le metera dentro de nuestro repositorio y 
                 ya tendra permisos</p>
                 <figure>
                     <img src="img/memoria/acceso%20invitacion%20jaime%20git%20hub.png"
                          alt="comprobar acceso al repositorio">
+                    <figcaption>Img21.- Comprobar acceso al repositorio</figcaption>
                 </figure>
                 <p>Ahora creamos una carpeta nueva donde vamos a trabajar, la inicializamos y la conectamos con el
                 repositorio para poder hacer los commit y subir los archivos editados, para ello usamos los
                 comandos <code>"git init" y "git remote add origin ejemplorepositorio"</code></p>
                 <figure>
-                    <img src="img/memoria/carpeta%20proyecto.PNG" alt="">
+                    <img src="img/memoria/carpeta%20proyecto.PNG" alt="Carpeta nueva para el proyecto">
+                    <figcaption>Img22.- Carpeta nueva para el proyecto</figcaption>
                 </figure>
                 <p>A partir de aqui ya podemos abrir el WebStorm y empezar a crear nuestra pagina web, al acabar
                 podemos subir el trabajo realizado a traves de los comandos <code>"git add *"</code> que añade
@@ -148,6 +170,7 @@
                 <p>Si todo ha ido correctamente tendremos archivos en nuestro repositorio</p>
                 <figure>
                     <img src="img/memoria/git%20push.PNG" alt="comprobacion de git push">
+                    <figcaption>Img23.- Comprobacion de git push</figcaption>
                 </figure>
                 <p>Desde el ordenador de nuestro compañero podemos hacer un <code>"git clone 'repositorio' "</code>
                 y se nos descargaran todos los archivos para que el pueda trabajar con la version mas reciente</p>
@@ -155,17 +178,20 @@
                 <p>Nos vamos a nuestro repositorio, le damos a Settings/Ajustes</p>
                 <figure>
                     <img src="img/memoria/gitpages1.PNG" alt="donde colocarse">
+                    <figcaption>Img24.- Donde colocarse</figcaption>
                 </figure>
                 <p>Ahora bajamos hasta donde veamos que pone GitHub Pages, abrimos el menu desplegable donde por
                 defecto pone "none" y lo cambiamos a "master branch"</p>
                 <figure>
                     <img src="img/memoria/gitpages2.PNG" alt="activar github pages">
+                    <figcaption>Img25.- Activar GitHub Pages</figcaption>
                 </figure>
                 <p>Ahora se recarga solo y nos saldra directamente el enlace, ya tenemos publicada nuestra página</p>
                 <p>Enlace a GitHub Pages: <a href="https://davidcalvop.github.io/ProyectoD-J/">
                     https://davidcalvop.github.io/ProyectoD-J/</a></p>
                 <figure>
                     <img src="img/memoria/gitpages3.PNG" alt="enlace de github pages">
+                    <figcaption>Img26.- Enlace de GitHub Pages</figcaption>
                 </figure>
 
                 <h1 id="e4">4.- INSTALACIÓN DEL SERVIDOR MYSQL</h1>
@@ -173,53 +199,91 @@
                     <code>“sudo apt-get install mysql-server”</code></p>
                 <figure>
                     <img src="img/memoria/instalacion%20mysql.PNG" alt="instalacion del servidor MYSQL">
+                    <figcaption>Img27.- Instalacion del servidor MYSQL</figcaption>
                 </figure>
                 <p>Accedemos a la base de datos con el comando <code>“mysql”</code> y comprobamos las tablas
                     existentes con el comando <code>“show databases;”</code> y observamos que no existe ninguna
                     base de datos por defecto.</p>
                 <figure>
                     <img src="img/memoria/comprobar%20tablas.PNG" alt="comprobacion de tablas por defecto">
+                    <figcaption>Img28.- Comprobacion de tablas por defecto</figcaption>
                 </figure>
                 <p>Instalamos el cliente de MYSQL con el comando <code>"apt-get install mysql-client"</code></p>
                 <figure>
                     <img src="img/memoria/instalar%20cliente%20mysql.PNG" alt="instalar cliente mysql">
+                    <figcaption>Img29.- Instalar cliente mysql</figcaption>
                 </figure>
                 <p>Conectamos php con mysql instalando el paquete php-mysql</p>
                 <figure>
                     <img src="img/memoria/conectar%20php%20con%20mysql.PNG" alt="conectamos php con mysql">
+                    <figcaption>Img30.- Conectamos php con mysql</figcaption>
                 </figure>
                 <p>Ahora instalamos el PHPMYADMIN con el comando <code>"apt-get install phpmyadmin"</code>
                 que es un gestor gráfico de base de datos</p>
                 <figure>
                     <img src="img/memoria/instalacion%20phpmyadmin.PNG" alt="instalamos el gestor grafico">
+                    <figcaption>Img31.- Instalamos el gestor grafico</figcaption>
                 </figure>
                 <p>Seleccionamos que el servidor que queremos usar sea el apache2, para ello usamos el espacio</p>
                 <figure>
-                    <img src="img/memoria/instalar%20apache%20en%20phpmyadmin.PNG" alt="">
+                    <img src="img/memoria/instalar%20apache%20en%20phpmyadmin.PNG" alt="Instalamos apache en phpadmin">
+                    <figcaption>Img32.- Instalamos apache en phpadmin</figcaption>
                 </figure>
                 <p>Accedemos a la base de datos como "root" seleccionamos la base de datos MYSQL y cambiamos la
                     contraseña del usuario "root" para que no se puede acceder a la base de datos con los datos
                     por defecto</p>
                 <figure>
                     <img src="img/memoria/cambio%20de%20contraseña%20mysql.PNG" alt="cambio de contraseña del root">
+                    <figcaption>Img33.- Cambio de contraseña del root</figcaption>
                 </figure>
                 <p>Comprobamos que podemos acceder al phpmyadmin con los nuevos datos</p>
                 <figure>
-                    <img src="img/memoria/phpmyadmin.PNG" alt="conexion a traves del phpmyadmin"><br><br>
+                    <img src="img/memoria/phpmyadmin.PNG" alt="conexion a traves del phpmyadmin">
+                    <figcaption>Img34.- Conexion a traves del phpmyadmin</figcaption><br>
                 </figure>
                 <figure>
                     <img src="img/memoria/acceso%20correcto%20phpmyadmin.PNG" alt="accedemos correctamente al phpmyadmin">
+                    <figcaption>Img35.- Accedemos correctamente al phpmyadmin</figcaption><br>
                 </figure>
+                <h3>Creacion de base de datos</h3>
+                <p><a href="E_R%20Proyecto.json">Diseño Entidad-Relacion</a></p>
+                <figure>
+                    <img src="img/memoria/entidad-relacion.PNG" alt="diseño entidad relacion">
+                    <figcaption>Img36.- Diseño entidad relacion</figcaption><br>
+                </figure>
+                <p>Diseño Relacional</p>
+                <figure>
+                    <img src="img/memoria/modelo-relacional.PNG" alt="diseño modelo relacional">
+                    <figcaption>Img37.- Diseño modelo relacional</figcaption><br>
+                </figure>
+                <p>Creamos la base de datos con nombre "Clases Asir"</p>
+                <figure>
+                    <img src="img/memoria/creacion%20base%20de%20datos.PNG" alt="Creacion de la base de datos">
+                    <figcaption>Img38.- Creacion de la base de datos</figcaption>
+                </figure>
+                <p>Creamos las tablas de la base de datos</p>
+                <figure>
+                    <img src="img/memoria/creacion%20de%20tablas.PNG" alt="Creacion de las tablas de la base de datos">
+                    <figcaption>Img39.- Creacion de las tablas de la base de datos</figcaption>
+                </figure>
+                <p>Accedemos a la base de datos como localhost y creamos un usuario que solo tenga
+                    permisos para la base de datos Clases_Asir</p>
+                <figure>
+                    <img src="img/memoria/crear%20usuario%20Clases_Asir.PNG" alt="creamos usuario y le damos permisos">
+                    <figcaption>Img40.- Creamos usuario y le damos permisos</figcaption>
+                </figure>
+
 
                 <h1 id="e5">5.- ESTIMACIÓN DE COSTES</h1>
 
-                <h3>Servidor Real</h3>
-                <p><a href="https://www.ovh.es/servidores_dedicados/advance/adv-1/">(enlace)</a></p>
+                <h3>Servidor Real <a href="https://www.ovh.es/servidores_dedicados/advance/adv-1/">(enlace)</a></h3>
                 <figure>
-                    <img src="img/memoria/servidor-real.png" alt="servidor real"><br><br>
+                    <img src="img/memoria/servidor-real.png" alt="servidor real">
+                    <figcaption>Img41.- Presupuesto servidor real</figcaption><br>
                 </figure>
                 <figure>
                     <img src="img/memoria/usos-servidor-real.png" alt="usos del servidor real">
+                    <figcaption>Img42.- Usos del servidor real</figcaption><br>
                 </figure>
                 <p>Dentro de los servidores reales, este es un servidor idóneo, ya que nos ofrece las prestaciones
                     suficientes y compatibles con nuestra base de datos. Este servidor real se encuentra disponible
@@ -239,10 +303,10 @@
                 </ul>
                 <br>
 
-                <h3>Servidor Virtual</h3>
-                <p><a href="https://www.ovh.es/vps/vps-cloud.xml">(enlace)</a></p>
+                <h3>Servidor Virtual <a href="https://www.ovh.es/vps/vps-cloud.xml">(enlace)</a></h3>
                 <figure>
                     <img src="img/memoria/servidor-virtual.png" alt="servidor virtual">
+                    <figcaption>Img43.- Presupuesto servidor virtual</figcaption>
                 </figure>
                 <p>Ventajas:</p>
                 <ul>
@@ -263,10 +327,11 @@
                 </ul>
                 <br>
 
-                <h3>Servidor Hosting</h3>
-                <p><a href="https://www.ovh.es/servidores_dedicados/hosting/1806host05.xml">(enlace)</a></p>
+                <h3>Servidor Hosting <a href="https://www.ovh.es/servidores_dedicados/hosting/1806host05.xml">
+                    (enlace)</a></h3>
                 <figure>
                     <img src="img/memoria/servidor-hosting.png" alt="servidor hosting">
+                    <figcaption>Img44.- Presupuesto servidor hosting</figcaption>
                 </figure>
                 <p>El hosting de OVH es interesante para:</p>
                 <ul>
@@ -277,10 +342,10 @@
                     <li>Tener soporte de hardware en caso de averías.</li>
                 </ul>
 
-                <h3>Servidor Housing</h3>
-                <p><a href="https://www.ovh.com/fr/housing/details.xml?id=1-3u">(enlace)</a></p>
+                <h3>Servidor Housing <a href="https://www.ovh.com/fr/housing/details.xml?id=1-3u">(enlace)</a></h3>
                 <figure>
                     <img src="img/memoria/servidor-housing.png" alt="servidor housing">
+                    <figcaption>Img45.- Presupuesto servidor housing</figcaption>
                 </figure>
                 <p>En el caso del housing habría que tener en cuenta que generará gastos adicionales,
                     y sus características son: </p>

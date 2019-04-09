@@ -88,7 +88,7 @@ body {
     width: 100%;
     background-image: url("../img/fondo2.jpg");
     background-size: cover;
-    background-position: bottom right ;
+    background-position: top right;
     padding-top: 50px;
 }
 
@@ -117,6 +117,7 @@ li a {
 cite {
     margin: 10px;
     font-size: 1.3em;
+    color: white;
 }
 
 .ejercicios figure img {
@@ -125,4 +126,10 @@ cite {
 .ejercicios figure {
     max-width: 100%;
     margin: 0;
+}
+
+figcaption {
+    font-style: italic;
+    font-size: small;
+    color: #616161;
 }
